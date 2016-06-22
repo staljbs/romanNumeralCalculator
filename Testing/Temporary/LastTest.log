@@ -1,0 +1,21 @@
+Start testing: Jun 22 13:40 EDT
+----------------------------------------------------------
+1/1 Testing: checkRomanNumCalc
+1/1 Test: checkRomanNumCalc
+Command: "/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc"
+Directory: /home/anarang/Ford/romanNumeralCalculator
+"checkRomanNumCalc" start time: Jun 22 13:40 EDT
+Output:
+----------------------------------------------------------
+Running suite(s): RomanNumeralCalculator
+0%: Checks: 1, Failures: 1, Errors: 0
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:10:F:Core:test_basic:0: Assertion '0 == 1' failed: 0 == 0, 1 == 1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"checkRomanNumCalc" end time: Jun 22 13:40 EDT
+"checkRomanNumCalc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 22 13:40 EDT
