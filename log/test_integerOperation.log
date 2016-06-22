@@ -1,14 +1,4 @@
-Start testing: Jun 22 17:23 EDT
-----------------------------------------------------------
-1/1 Testing: checkRomanNumCalc
-1/1 Test: checkRomanNumCalc
-Command: "/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc"
-Directory: /home/anarang/Ford/romanNumeralCalculator
-"checkRomanNumCalc" start time: Jun 22 17:23 EDT
-Output:
-----------------------------------------------------------
-Running suite(s): RomanNumeralCalculator
-100%: Checks: 8, Failures: 0, Errors: 0
+Running suite RomanNumeralCalculator
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:9:P:Core:test_basic:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:23:P:Core:test_romanNumConstants:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:37:P:Core:test_singleRomanToInt:0: Passed
@@ -17,12 +7,5 @@ Running suite(s): RomanNumeralCalculator
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:140:P:Core:test_isRomanNum:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:215:P:Core:test_romanToInt:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:250:P:Core:test_intToRoman:0: Passed
-<end of output>
-Test time =   0.01 sec
-----------------------------------------------------------
-Test Passed.
-"checkRomanNumCalc" end time: Jun 22 17:23 EDT
-"checkRomanNumCalc" time elapsed: 00:00:00
-----------------------------------------------------------
-
-End testing: Jun 22 17:23 EDT
+Results for all suites run:
+100%: Checks: 8, Failures: 0, Errors: 0

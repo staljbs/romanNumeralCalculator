@@ -253,6 +253,20 @@ START_TEST(test_intToRoman)
 END_TEST
 
 
+START_TEST(test_integerOperation)
+{
+        ck_assert_int_eq( integerOperation("I", "I", ADDITION_OPERATOR), 2);
+	ck_assert_int_eq( integerOperation("I", "I", SUBTRACTION_OPERATOR), 0);
+        ck_assert_int_eq( integerOperation("XI", "X", SUBTRACTION_OPERATOR), 1);
+        ck_assert_int_eq( integerOperation("X", "XI", SUBTRACTION_OPERATOR), 0);
+        ck_assert_int_eq( integerOperation("XX", "I", ADDITION_OPERATOR), 21);
+	ck_assert_int_eq( integerOperation("MMMMCMXCIX", "I", ADDITION_OPERATOR), 0);
+
+}
+END_TEST
+
+
+
 
 Suite * romanNumCalculator_suite(void)
 {
@@ -285,7 +299,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_intToRoman.log");
+	srunner_set_log(sr, "log/test_integerOperation.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);
