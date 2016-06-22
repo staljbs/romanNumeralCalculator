@@ -11,6 +11,19 @@ START_TEST(test_basic)
 
 }
 END_TEST
+START_TEST(test_romanNumConstants)
+{
+        ck_assert_int_eq(   I , 1);
+        ck_assert_int_eq(   V , 5);
+        ck_assert_int_eq(   X , 10);
+        ck_assert_int_eq(   L , 50);
+        ck_assert_int_eq(   C , 100);
+        ck_assert_int_eq(   D , 500);
+        ck_assert_int_eq(   M , 1000);
+        ck_assert_int_eq(   INVALID_INPUT , 0);
+
+}
+END_TEST
 
 START_TEST(test_singleRomanToInt)
 {
@@ -27,19 +40,6 @@ START_TEST(test_singleRomanToInt)
 END_TEST
 
 
-START_TEST(test_romanNumConstants)
-{
-        ck_assert_int_eq(   I , 1);
-        ck_assert_int_eq(   V , 5);
-        ck_assert_int_eq(   X , 10);
-        ck_assert_int_eq(   L , 50);
-        ck_assert_int_eq(   C , 100);
-        ck_assert_int_eq(   D , 500);
-        ck_assert_int_eq(   M , 1000);
-        ck_assert_int_eq(   INVALID_INPUT , 0);
-
-}
-END_TEST
 
 Suite * romanNumCalculator_suite(void)
 {
@@ -52,6 +52,7 @@ Suite * romanNumCalculator_suite(void)
     tc_core = tcase_create("Core");
     tcase_add_test(tc_core, test_basic);
     tcase_add_test(tc_core, test_romanNumConstants);
+    tcase_add_test(tc_core, test_singleRomanToInt);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -66,7 +67,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_romanNumConstants.log");
+	srunner_set_log(sr, "log/test_singleRomanToInt.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

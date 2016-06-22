@@ -1,5 +1,0 @@
-Running suite RomanNumeralCalculator
-/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:9:P:Core:test_basic:0: Passed
-/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:39:P:Core:test_romanNumConstants:0: Passed
-Results for all suites run:
-100%: Checks: 2, Failures: 0, Errors: 0
