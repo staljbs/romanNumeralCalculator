@@ -52,6 +52,20 @@ START_TEST(test_allowedRepeatsFor)
 }
 END_TEST
 
+START_TEST(test_allowedValueBefore)
+{
+        ck_assert_int_eq(   allowedValueBefore(I), INVALID_INPUT);
+        ck_assert_int_eq(   allowedValueBefore(V), I);
+        ck_assert_int_eq(   allowedValueBefore(X), I);
+        ck_assert_int_eq(   allowedValueBefore(L), X);
+        ck_assert_int_eq(   allowedValueBefore(C), X);
+        ck_assert_int_eq(   allowedValueBefore(D), C);
+        ck_assert_int_eq(   allowedValueBefore(M), C);
+        ck_assert_int_eq(   allowedValueBefore(123), INVALID_INPUT);
+}
+END_TEST
+
+
 Suite * romanNumCalculator_suite(void)
 {
     Suite *s;
@@ -65,6 +79,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_romanNumConstants);
     tcase_add_test(tc_core, test_singleRomanToInt);
     tcase_add_test(tc_core, test_allowedRepeatsFor);
+    tcase_add_test(tc_core, test_allowedValueBefore);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -79,7 +94,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_allowedRepeatsFor.log");
+	srunner_set_log(sr, "log/test_allowedValueBefore.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

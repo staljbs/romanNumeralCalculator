@@ -61,8 +61,17 @@ int allowedRepeatsFor(int romanNumValue)
 
 int allowedValueBefore(int romanNumValue)
 {
-	//TODO: Complete this function
-	return 0;
+        switch(romanNumValue)
+        {
+                case I  :       return INVALID_INPUT;
+                case V  :       return I;
+                case X  :       return I;
+                case L  :       return X;
+                case C  :       return X;
+                case D  :       return C;
+                case M  :       return C;
+                default :       return INVALID_INPUT;
+        }
 
 }
 
