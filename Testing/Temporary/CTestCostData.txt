@@ -1,3 +1,2 @@
-checkRomanNumCalc 0 0
+checkRomanNumCalc 1 0.00307608
 ---
-checkRomanNumCalc

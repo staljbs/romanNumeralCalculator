@@ -7,11 +7,24 @@ START_TEST(test_basic)
 {
 	ck_assert_str_eq("X","X");
 	ck_assert_int_eq( 0 , 0 ); 
-	ck_assert_int_eq( 0 , 1 ); //to check assertion failure log
+	//ck_assert_int_eq( 0 , 1 ); //to check assertion failure log
 
 }
 END_TEST
 
+START_TEST(test_romanNumConstants)
+{
+        ck_assert_int_eq(   I , 1);
+        ck_assert_int_eq(   V , 5);
+        ck_assert_int_eq(   X , 10);
+        ck_assert_int_eq(   L , 50);
+        ck_assert_int_eq(   C , 100);
+        ck_assert_int_eq(   D , 500);
+        ck_assert_int_eq(   M , 1000);
+        ck_assert_int_eq(   INVALID_INPUT , 0);
+
+}
+END_TEST
 
 Suite * romanNumCalculator_suite(void)
 {
@@ -23,6 +36,7 @@ Suite * romanNumCalculator_suite(void)
     /* Core test case */
     tc_core = tcase_create("Core");
     tcase_add_test(tc_core, test_basic);
+    tcase_add_test(tc_core, test_romanNumConstants);
     suite_add_tcase(s, tc_core);
 
     return s;
