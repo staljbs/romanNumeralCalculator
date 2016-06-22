@@ -66,7 +66,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "test_romanNumConstants.log");
+	srunner_set_log(sr, "log/test_romanNumConstants.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);
