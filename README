@@ -55,3 +55,6 @@ bigger ("IV" means four, "CM" means ninehundred)
 > If the numeral is V, L or D you can't have more than one ("D" + "D" = "M" not “DD”)
 
 
+Credits:
+=============================================================================
+> Initial source and check test files adapted from : /doc/example provided with check installation.
