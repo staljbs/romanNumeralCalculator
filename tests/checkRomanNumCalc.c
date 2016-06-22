@@ -309,6 +309,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_intToRoman);
     tcase_add_test(tc_core, test_integerOperation);
     tcase_add_test(tc_core, test_romanAddition);
+    tcase_add_test(tc_core, test_romanSubtraction);
     suite_add_tcase(s, tc_core);
 
     return s;
