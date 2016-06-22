@@ -17,7 +17,9 @@ extern const int INVALID_INPUT;
 
 int singleRomanToInt(const char romanNumChar);
 int romanToInt( const char* romanNumStr);
-
+char* romanAddition(const char* romanNum1, const char* romanNum2);
+char* romanSubtraction(const char* romanNum1, const char* romanNum2);
+char* intToRoman(int romanIntValue);
 
 
 

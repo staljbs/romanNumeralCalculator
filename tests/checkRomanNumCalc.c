@@ -218,6 +218,42 @@ START_TEST(test_romanToInt)
 END_TEST
 
 
+START_TEST(test_intToRoman)
+{
+        ck_assert_str_eq( intToRoman(1), "I");
+        ck_assert_str_eq( intToRoman(2), "II");
+        ck_assert_str_eq( intToRoman(3), "III");
+        ck_assert_str_eq( intToRoman(4), "IV");
+        ck_assert_str_eq( intToRoman(5), "V");
+        ck_assert_str_eq( intToRoman(6), "VI");
+        ck_assert_str_eq( intToRoman(7), "VII");
+        ck_assert_str_eq( intToRoman(8), "VIII");
+        ck_assert_str_eq( intToRoman(9), "IX");
+        ck_assert_str_eq( intToRoman(10), "X");
+        ck_assert_str_eq( intToRoman(11), "XI");
+        ck_assert_str_eq( intToRoman(13), "XIII");
+        ck_assert_str_eq( intToRoman(21), "XXI");
+        ck_assert_str_eq( intToRoman(31), "XXXI");
+        ck_assert_str_eq( intToRoman(41), "XLI");
+        ck_assert_str_eq( intToRoman(49), "XLIX");
+        ck_assert_str_eq( intToRoman(50), "L");
+        ck_assert_str_eq( intToRoman(90), "XC");
+        ck_assert_str_eq( intToRoman(99), "XCIX");
+        ck_assert_str_eq( intToRoman(100), "C");
+        ck_assert_str_eq( intToRoman(110), "CX");
+        ck_assert_str_eq( intToRoman(400), "CD");
+        ck_assert_str_eq( intToRoman(500), "D");
+        ck_assert_str_eq( intToRoman(600), "DC");
+        ck_assert_str_eq( intToRoman(900), "CM");
+        ck_assert_str_eq( intToRoman(1000), "M");
+        ck_assert_str_eq( intToRoman(1100), "MC");
+        ck_assert_str_eq( intToRoman(3999), "MMMCMXCIX");
+
+}
+END_TEST
+
+
+
 Suite * romanNumCalculator_suite(void)
 {
     Suite *s;
@@ -234,6 +270,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_allowedValueBefore);
     tcase_add_test(tc_core, test_isRomanNum);
     tcase_add_test(tc_core, test_romanToInt);
+    tcase_add_test(tc_core, test_intToRoman);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -248,7 +285,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_romanToInt.log");
+	srunner_set_log(sr, "log/test_intToRoman.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

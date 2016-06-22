@@ -1,6 +1,8 @@
 #include "romanNumeralCalculator.h"
 
 const int INVALID_INPUT = 0;
+const char ADDITION_OPERATOR = '+';
+const char SUBTRACTION_OPERATOR = '-';
 
 //=================================================================
 // singleRomanToInt     : Function to convert a single roman numeral to its 
@@ -159,4 +161,108 @@ int romanToInt( const char* romanNumStr)
         return romanIntValue;
 }
 
-                     
+//=================================================================
+// integerOperation     : Function to perform various operations -currently supports ADDITION & SUBTRACTION-
+//                        on input roman numerals
+// Input1               : Roman numeral string
+// Input2               : Roman numeral string
+// Input3               : operator character
+// Output               : Returns result of integer operation on the two input roman numerals
+//================================================================
+
+
+int integerOperation(const char* romanNum1, const char* romanNum2, const char operator)
+{
+        int num1 = romanToInt(romanNum1);
+        int num2 = romanToInt(romanNum2);
+        if ((num1 == INVALID_INPUT) \
+	|| (num2 == INVALID_INPUT) \
+	|| ((operator == SUBTRACTION_OPERATOR) \
+		&& (num2>num1)))
+        {
+                return INVALID_INPUT;
+        }
+	
+	if (operator == SUBTRACTION_OPERATOR)
+	{
+		return num1 - num2;
+	}
+	else if (operator == ADDITION_OPERATOR)
+	{
+		return num1 + num2;
+        }
+	
+	return INVALID_INPUT;
+
+}
+
+
+
+//=================================================================
+// romanAddition        : Function to perform addition on the input roman numeral strings
+// Input1               : Roman numeral string
+// Input2               : Roman numeral string
+// Output               : Returns roman numeral string which is the result of addition of the inputs
+//================================================================
+
+char* romanAddition(const char* romanNum1, const char* romanNum2)
+{
+        int sum = integerOperation(romanNum1, romanNum2, ADDITION_OPERATOR);
+        if (sum == INVALID_INPUT) {return 0;}
+
+        return intToRoman(sum);
+}
+
+
+//=================================================================
+// romanSubtraction     : Function to perform subtraction on the input roman numeral strings
+// Input1               : Roman numeral string
+// Input2               : Roman numeral string
+// Output               : Returns roman numeral string which is the result of subtraction of the inputs
+//================================================================
+
+char* romanSubtraction(const char* romanNum1, const char* romanNum2)
+{
+        int difference = integerOperation(romanNum1, romanNum2, SUBTRACTION_OPERATOR);
+        if (difference == INVALID_INPUT) {return 0;}
+
+        return intToRoman(difference);
+}
+
+
+
+//=================================================================
+// intToRoman	     	: Function to convert integer to roman numeral string
+// Input                : Integer value
+// Output               : Returns roman numeral string corresponding to the input 
+//			  according Roman Numeral Rules(refer README)
+//================================================================
+
+char* intToRoman(int romanIntValue)
+{
+	//Roman numerals equal to or above 5000 cannot be converted. Heavy bar representation needed.
+	//TODO: Implement heavy bar representation for roman numerals to have integers upto 5,000,000
+        if (romanIntValue >= 5000)
+        {
+                return 0;
+        }
+
+        char romanNumStr[100];
+        memset(romanNumStr, 0, 100);
+
+        int intValues[] 		= {1000, 900,  500, 400,  100, 90,   50,  40,   10,   9,    5,   4,    1};
+        const char* romanValues[] 	= {"M",  "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int count = sizeof(intValues)/sizeof(intValues[0]);
+
+        int i = 0;
+        for (i = 0; i < count; ++i)
+        {
+                for (;romanIntValue >= intValues[i]; romanIntValue -= intValues[i])
+                {
+                        strcat(romanNumStr, romanValues[i]);
+                }
+        }
+
+        return strdup(romanNumStr);
+}
+                
