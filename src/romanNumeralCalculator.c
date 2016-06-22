@@ -35,8 +35,18 @@ int singleRomanToInt( const char romanNumChar )
 //================================================================
 int allowedRepeatsFor(int romanNumValue)
 {
-	//TODO: Complete this function
-	return 0;
+        switch(romanNumValue)
+        {
+                case I  :       return 3;
+                case V  :       return 1;
+                case X  :       return 3;
+                case L  :       return 1;
+                case C  :       return 3;
+                case D  :       return 1;
+                case M  :       return 4;
+                default :       return INVALID_INPUT;
+        }
+
 }
 
 
