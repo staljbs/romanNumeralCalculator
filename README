@@ -5,10 +5,9 @@ Created By: Arjun Narang
 Description:
 =====================================================================================
 This is a library to perform addition/subtraction operations on Roman Numeral Strings.
-----This is a work in progress----
 
 
-Expected Inputs:
+Inputs:
 ===============
 Input1: First Roman Numeral	(String)
 Input2: Second Roman Numeral	(String)
@@ -23,7 +22,7 @@ Output: Roman Numeral		(String)
 
 
 
-Expected Functions:
+Functions:
 ===================	
 > Convert Input1 and Input2 Roman Numerals to Integers according to Roman Numeral Rules: 
   Functions: 
