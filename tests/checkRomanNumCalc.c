@@ -12,6 +12,21 @@ START_TEST(test_basic)
 }
 END_TEST
 
+START_TEST(test_singleRomanToInt)
+{
+        ck_assert_int_eq(   singleRomanToInt('I'), I);
+        ck_assert_int_eq(   singleRomanToInt('V'), V);
+        ck_assert_int_eq(   singleRomanToInt('X'), X);
+        ck_assert_int_eq(   singleRomanToInt('L'), L);
+        ck_assert_int_eq(   singleRomanToInt('C'), C);
+        ck_assert_int_eq(   singleRomanToInt('D'), D);
+        ck_assert_int_eq(   singleRomanToInt('M'), M);
+        ck_assert_int_eq(   singleRomanToInt('A'), INVALID_INPUT);
+
+}
+END_TEST
+
+
 START_TEST(test_romanNumConstants)
 {
         ck_assert_int_eq(   I , 1);
@@ -51,7 +66,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-
+	srunner_set_log(sr, "test_romanNumConstants.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

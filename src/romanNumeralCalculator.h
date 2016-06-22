@@ -12,6 +12,7 @@
 
 extern const int INVALID_INPUT;
 
+int singleRomanToInt(const char romanNumChar);
 
 
 
