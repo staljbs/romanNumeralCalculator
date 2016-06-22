@@ -248,6 +248,7 @@ START_TEST(test_intToRoman)
         ck_assert_str_eq( intToRoman(1000), "M");
         ck_assert_str_eq( intToRoman(1100), "MC");
         ck_assert_str_eq( intToRoman(3999), "MMMCMXCIX");
+        ck_assert_str_eq( intToRoman(5000), "RESULT ABOVE 5000");
 
 }
 END_TEST
@@ -262,6 +263,27 @@ START_TEST(test_integerOperation)
         ck_assert_int_eq( integerOperation("XX", "I", ADDITION_OPERATOR), 21);
 	ck_assert_int_eq( integerOperation("MMMMCMXCIX", "I", ADDITION_OPERATOR), 5000);
 
+}
+END_TEST
+
+
+START_TEST(test_romanAddition)
+{
+
+        ck_assert_str_eq( romanAddition("I", "I"), "II");
+        ck_assert_str_eq( romanAddition("XV", "M"), "MXV");
+        ck_assert_str_eq( romanAddition("MMMMCMXCIX", "I"), "RESULT ABOVE 5000");
+
+}
+END_TEST
+
+START_TEST(test_romanSubtraction)
+{
+        ck_assert_str_eq( romanSubtraction("I", "I"), "INVALID NUMERAL OR OPERATION");
+        ck_assert_str_eq( romanSubtraction("XI", "X"), "I");
+        ck_assert_str_eq( romanSubtraction("X", "XI"), "INVALID NUMERAL OR OPERATION");
+        ck_assert_str_eq( romanSubtraction("MXC", "M"), "XC");
+        
 }
 END_TEST
 
@@ -286,6 +308,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_romanToInt);
     tcase_add_test(tc_core, test_intToRoman);
     tcase_add_test(tc_core, test_integerOperation);
+    tcase_add_test(tc_core, test_romanAddition);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -300,7 +323,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_integerOperation.log");
+	srunner_set_log(sr, "log/test_romanAddition.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

@@ -208,7 +208,7 @@ int integerOperation(const char* romanNum1, const char* romanNum2, const char op
 char* romanAddition(const char* romanNum1, const char* romanNum2)
 {
         int sum = integerOperation(romanNum1, romanNum2, ADDITION_OPERATOR);
-        if (sum == INVALID_INPUT) {return 0;}
+        if (sum == INVALID_INPUT) {return "INVALID NUMERAL OR OPERATION";}
 
         return intToRoman(sum);
 }
@@ -224,7 +224,7 @@ char* romanAddition(const char* romanNum1, const char* romanNum2)
 char* romanSubtraction(const char* romanNum1, const char* romanNum2)
 {
         int difference = integerOperation(romanNum1, romanNum2, SUBTRACTION_OPERATOR);
-        if (difference == INVALID_INPUT) {return 0;}
+        if (difference == INVALID_INPUT) {return "INVALID NUMERAL OR OPERATION";}
 
         return intToRoman(difference);
 }
@@ -244,7 +244,7 @@ char* intToRoman(int romanIntValue)
 	//TODO: Implement heavy bar representation for roman numerals to have integers upto 5,000,000
         if (romanIntValue >= 5000)
         {
-                return 0;
+                return "RESULT ABOVE 5000";
         }
 
         char romanNumStr[100];
