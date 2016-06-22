@@ -9,6 +9,8 @@
 /home/anarang/Ford/romanNumeralCalculator/src/romanNumeralCalculator.h
 stdbool.h
 -
+string.h
+-
 
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c
 stdlib.h

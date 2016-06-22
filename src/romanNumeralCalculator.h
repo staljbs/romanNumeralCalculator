@@ -2,6 +2,7 @@
 #define ROMAN_NUMERAL_CALC_H
 
 #include <stdbool.h>
+#include <string.h>
 
 #define I 1
 #define V 5
@@ -15,9 +16,7 @@
 extern const int INVALID_INPUT;
 
 int singleRomanToInt(const char romanNumChar);
-int allowedRepeatsFor(int romanNumValue);
-int allowedValueBefore(int romanNumValue);
-bool isRomanNum(char * romanNumStr);
+int romanToInt( const char* romanNumStr);
 
 
 

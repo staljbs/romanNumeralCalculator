@@ -83,7 +83,7 @@ int allowedValueBefore(int romanNumValue)
 // Input                : Roman numeral string
 // Output               : Returns true if input is valid roman numeral else false
 //================================================================
-bool isRomanNum(char * romanNumStr)
+bool isRomanNum(const char * romanNumStr)
 {
 
         bool isRoman            = true;
@@ -125,4 +125,38 @@ bool isRomanNum(char * romanNumStr)
 }
 
 
+//=================================================================
+// romanToInt           : Function to convert the input roman numeral string
+//                        to integer value according to Roman Numeral Rules (refer README)
+// Input                : Roman numeral string
+// Output               : Returns integer conversion of the input roman numeral
+//================================================================
 
+int romanToInt( const char* romanNumStr)
+{
+
+        int romanIntValue = 0;
+        int nextRomanValue = 0;
+        int currRomanValue = 0;
+        if (!isRomanNum(romanNumStr))   {return INVALID_INPUT;}
+
+        int i = 0;
+        for (i = strlen(romanNumStr)-1; i >=0; --i)
+        {
+                currRomanValue = singleRomanToInt(romanNumStr[i]);
+
+                if (currRomanValue<nextRomanValue)
+                {
+                        romanIntValue -= currRomanValue;
+                }
+                else
+                {
+                        romanIntValue += currRomanValue;
+                }
+
+                nextRomanValue = currRomanValue;
+        }
+        return romanIntValue;
+}
+
+                     

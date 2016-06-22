@@ -142,6 +142,80 @@ START_TEST(test_isRomanNum)
 }
 END_TEST
 
+START_TEST(test_romanToInt)
+{
+//Valid Romans:
+        ck_assert_int_eq( romanToInt("I"), 1);
+        ck_assert_int_eq( romanToInt("II"), 2);
+        ck_assert_int_eq( romanToInt("III"), 3);
+        ck_assert_int_eq( romanToInt("IV"), 4);
+        ck_assert_int_eq( romanToInt("V"), 5);
+        ck_assert_int_eq( romanToInt("VI"), 6);
+        ck_assert_int_eq( romanToInt("VII"), 7);
+        ck_assert_int_eq( romanToInt("VIII"), 8);
+        ck_assert_int_eq( romanToInt("IX"), 9);
+        ck_assert_int_eq( romanToInt("X"), 10);
+        ck_assert_int_eq( romanToInt("XI"), 11);
+        ck_assert_int_eq( romanToInt("XIII"), 13);
+        ck_assert_int_eq( romanToInt("XL"), 40);
+        ck_assert_int_eq( romanToInt("L"), 50);
+        ck_assert_int_eq( romanToInt("LX"), 60);
+        ck_assert_int_eq( romanToInt("LXXX"), 80);
+        ck_assert_int_eq( romanToInt("XC"), 90);
+        ck_assert_int_eq( romanToInt("C"), 100);
+        ck_assert_int_eq( romanToInt("CX"), 110);
+        ck_assert_int_eq( romanToInt("CXXX"), 130);
+        ck_assert_int_eq( romanToInt("CD"), 400);
+        ck_assert_int_eq( romanToInt("D"), 500);
+        ck_assert_int_eq( romanToInt("DC"), 600);
+        ck_assert_int_eq( romanToInt("DCCC"), 800);
+        ck_assert_int_eq( romanToInt("CM"), 900);
+        ck_assert_int_eq( romanToInt("M"), 1000);
+        ck_assert_int_eq( romanToInt("MC"), 1100);
+        ck_assert_int_eq( romanToInt("MCCC"), 1300);
+        ck_assert_int_eq( romanToInt("MMMMD"), 4500);
+
+//Invalid Romans:
+        ck_assert_int_eq( romanToInt("IIII"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XXXX"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("CCCC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VV"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("LL"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("DD"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("IIV"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VIIII"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VX"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("IIX"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XIIII"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XXL"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VL"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("IL"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("LXXXX"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XXC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("IC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("LC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("CXXXX"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("CCD"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("ID"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VD"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XD"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("LD"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("DCCCC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("CCM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("IM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("VM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("XM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("LM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("DM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("MCCCC"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("MMMMM"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt(" "), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("_"), INVALID_INPUT);
+        ck_assert_int_eq( romanToInt("ABCD"), INVALID_INPUT);
+
+}
+END_TEST
 
 
 Suite * romanNumCalculator_suite(void)
@@ -159,6 +233,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_allowedRepeatsFor);
     tcase_add_test(tc_core, test_allowedValueBefore);
     tcase_add_test(tc_core, test_isRomanNum);
+    tcase_add_test(tc_core, test_romanToInt);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -173,7 +248,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_isRomanNum.log");
+	srunner_set_log(sr, "log/test_romanToInt.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

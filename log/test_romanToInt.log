@@ -1,0 +1,10 @@
+Running suite RomanNumeralCalculator
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:9:P:Core:test_basic:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:23:P:Core:test_romanNumConstants:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:37:P:Core:test_singleRomanToInt:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:51:P:Core:test_allowedRepeatsFor:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:64:P:Core:test_allowedValueBefore:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:140:P:Core:test_isRomanNum:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:215:P:Core:test_romanToInt:0: Passed
+Results for all suites run:
+100%: Checks: 7, Failures: 0, Errors: 0
