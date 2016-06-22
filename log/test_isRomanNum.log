@@ -1,0 +1,9 @@
+Running suite RomanNumeralCalculator
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:9:P:Core:test_basic:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:23:P:Core:test_romanNumConstants:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:37:P:Core:test_singleRomanToInt:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:51:P:Core:test_allowedRepeatsFor:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:64:P:Core:test_allowedValueBefore:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:110:F:Core:test_isRomanNum:0: Assertion '!isRomanNum("IIV")' failed
+Results for all suites run:
+83%: Checks: 6, Failures: 1, Errors: 0

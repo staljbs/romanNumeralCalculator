@@ -66,6 +66,84 @@ START_TEST(test_allowedValueBefore)
 END_TEST
 
 
+START_TEST(test_isRomanNum)
+{
+//Valid Romans:
+        ck_assert( isRomanNum("I"));
+        ck_assert( isRomanNum("II"));
+        ck_assert( isRomanNum("III"));
+        ck_assert( isRomanNum("IV"));
+        ck_assert( isRomanNum("V"));
+        ck_assert( isRomanNum("VI"));
+        ck_assert( isRomanNum("VII"));
+        ck_assert( isRomanNum("VIII"));
+        ck_assert( isRomanNum("IX"));
+        ck_assert( isRomanNum("X"));
+        ck_assert( isRomanNum("XI"));
+        ck_assert( isRomanNum("XIII"));
+        ck_assert( isRomanNum("XL"));
+        ck_assert( isRomanNum("L"));
+        ck_assert( isRomanNum("LX"));
+        ck_assert( isRomanNum("LXXX"));
+        ck_assert( isRomanNum("XC"));
+        ck_assert( isRomanNum("C"));
+        ck_assert( isRomanNum("CX"));
+        ck_assert( isRomanNum("CXXX"));
+        ck_assert( isRomanNum("CD"));
+        ck_assert( isRomanNum("D"));
+        ck_assert( isRomanNum("DC"));
+        ck_assert( isRomanNum("DCCC"));
+        ck_assert( isRomanNum("CM"));
+        ck_assert( isRomanNum("M"));
+        ck_assert( isRomanNum("MC"));
+        ck_assert( isRomanNum("MCCC"));
+        ck_assert( isRomanNum("MMMMD"));
+
+//Invalid Romans:
+
+        ck_assert( !isRomanNum("IIII"));
+        ck_assert( !isRomanNum("XXXX"));
+        ck_assert( !isRomanNum("CCCC"));
+        ck_assert( !isRomanNum("VV"));
+        ck_assert( !isRomanNum("LL"));
+        ck_assert( !isRomanNum("DD"));
+        ck_assert( !isRomanNum("IIV"));
+        ck_assert( !isRomanNum("VIIII"));
+        ck_assert( !isRomanNum("VX"));
+        ck_assert( !isRomanNum("IIX"));
+        ck_assert( !isRomanNum("XIIII"));
+        ck_assert( !isRomanNum("XXL"));
+        ck_assert( !isRomanNum("VL"));
+        ck_assert( !isRomanNum("IL"));
+        ck_assert( !isRomanNum("LXXXX"));
+        ck_assert( !isRomanNum("XXC"));
+        ck_assert( !isRomanNum("IC"));
+        ck_assert( !isRomanNum("VC"));
+        ck_assert( !isRomanNum("LC"));
+        ck_assert( !isRomanNum("CXXXX"));
+        ck_assert( !isRomanNum("CCD"));
+        ck_assert( !isRomanNum("ID"));
+        ck_assert( !isRomanNum("VD"));
+        ck_assert( !isRomanNum("XD"));
+        ck_assert( !isRomanNum("LD"));
+        ck_assert( !isRomanNum("DCCCC"));
+        ck_assert( !isRomanNum("CCM"));
+        ck_assert( !isRomanNum("IM"));
+        ck_assert( !isRomanNum("VM"));
+        ck_assert( !isRomanNum("XM"));
+        ck_assert( !isRomanNum("LM"));
+        ck_assert( !isRomanNum("DM"));
+        ck_assert( !isRomanNum("MCCCC"));
+        ck_assert( !isRomanNum("MMMMM"));
+        ck_assert( !isRomanNum(" "));
+        ck_assert( !isRomanNum("_"));
+        ck_assert( !isRomanNum("ABCD"));
+
+}
+END_TEST
+
+
+
 Suite * romanNumCalculator_suite(void)
 {
     Suite *s;
@@ -80,6 +158,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_singleRomanToInt);
     tcase_add_test(tc_core, test_allowedRepeatsFor);
     tcase_add_test(tc_core, test_allowedValueBefore);
+    tcase_add_test(tc_core, test_isRomanNum);
     suite_add_tcase(s, tc_core);
 
     return s;
@@ -94,7 +173,7 @@ int main(void)
 
 	s = romanNumCalculator_suite();
 	sr = srunner_create(s);
-	srunner_set_log(sr, "log/test_allowedValueBefore.log");
+	srunner_set_log(sr, "log/test_isRomanNum.log");
 	srunner_run_all(sr, CK_VERBOSE);
 	number_failed = srunner_ntests_failed(sr);
 	srunner_free(sr);

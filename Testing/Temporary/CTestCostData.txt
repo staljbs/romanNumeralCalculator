@@ -1,2 +1,3 @@
-checkRomanNumCalc 8 0.000495106
+checkRomanNumCalc 8 0
 ---
+checkRomanNumCalc
