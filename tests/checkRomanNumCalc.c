@@ -260,7 +260,7 @@ START_TEST(test_integerOperation)
         ck_assert_int_eq( integerOperation("XI", "X", SUBTRACTION_OPERATOR), 1);
         ck_assert_int_eq( integerOperation("X", "XI", SUBTRACTION_OPERATOR), 0);
         ck_assert_int_eq( integerOperation("XX", "I", ADDITION_OPERATOR), 21);
-	ck_assert_int_eq( integerOperation("MMMMCMXCIX", "I", ADDITION_OPERATOR), 0);
+	ck_assert_int_eq( integerOperation("MMMMCMXCIX", "I", ADDITION_OPERATOR), 5000);
 
 }
 END_TEST
@@ -285,6 +285,7 @@ Suite * romanNumCalculator_suite(void)
     tcase_add_test(tc_core, test_isRomanNum);
     tcase_add_test(tc_core, test_romanToInt);
     tcase_add_test(tc_core, test_intToRoman);
+    tcase_add_test(tc_core, test_integerOperation);
     suite_add_tcase(s, tc_core);
 
     return s;
