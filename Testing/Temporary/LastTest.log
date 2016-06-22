@@ -1,26 +1,26 @@
-Start testing: Jun 22 15:12 EDT
+Start testing: Jun 22 15:17 EDT
 ----------------------------------------------------------
 1/1 Testing: checkRomanNumCalc
 1/1 Test: checkRomanNumCalc
 Command: "/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc"
 Directory: /home/anarang/Ford/romanNumeralCalculator
-"checkRomanNumCalc" start time: Jun 22 15:12 EDT
+"checkRomanNumCalc" start time: Jun 22 15:17 EDT
 Output:
 ----------------------------------------------------------
 Running suite(s): RomanNumeralCalculator
-83%: Checks: 6, Failures: 1, Errors: 0
+100%: Checks: 6, Failures: 0, Errors: 0
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:9:P:Core:test_basic:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:23:P:Core:test_romanNumConstants:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:37:P:Core:test_singleRomanToInt:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:51:P:Core:test_allowedRepeatsFor:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:64:P:Core:test_allowedValueBefore:0: Passed
-/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:110:F:Core:test_isRomanNum:0: Assertion '!isRomanNum("IIV")' failed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:140:P:Core:test_isRomanNum:0: Passed
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"checkRomanNumCalc" end time: Jun 22 15:12 EDT
+Test Passed.
+"checkRomanNumCalc" end time: Jun 22 15:17 EDT
 "checkRomanNumCalc" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jun 22 15:12 EDT
+End testing: Jun 22 15:17 EDT

@@ -83,35 +83,42 @@ int allowedValueBefore(int romanNumValue)
 // Input                : Roman numeral string
 // Output               : Returns true if input is valid roman numeral else false
 //================================================================
-
 bool isRomanNum(char * romanNumStr)
 {
 
         bool isRoman            = true;
         bool isNotRoman         = false;
         int nextRomanValue      = 0;
+        int currRomanValue      =0;
         int repeatCount         = 0;
-	
+        bool isSmallerThanNext = false;
+
         int i = 0;
-	//TODO: Create Function:
-	//		int allowedrepeatsFor(int romanNumValue)
-	//		int allowedValueBefore(int romanNumValue)
-	
         for (i = strlen(romanNumStr)-1; i >=0; --i)
         {
-                int currRomanValue = singleRomanToInt(romanNumStr[i]);
+                currRomanValue = singleRomanToInt(romanNumStr[i]);
 
                 if (currRomanValue == INVALID_INPUT) {return isNotRoman; }
 
                 if (currRomanValue == nextRomanValue)
                 {
+                        if (isSmallerThanNext)  {return isNotRoman;}
                         ++repeatCount;
                         if (repeatCount > allowedRepeatsFor(currRomanValue))    {return isNotRoman;}
+
                 }
                 else    {repeatCount = 1;}
 
-                if ((currRomanValue < nextRomanValue) \
-                        && (currRomanValue != allowedValueBefore(nextRomanValue))) {return isNotRoman;}
+                if (currRomanValue < nextRomanValue)
+                {
+                        isSmallerThanNext = true;
+                        if (currRomanValue != allowedValueBefore(nextRomanValue)) {return isNotRoman;}
+                }
+                else
+                {
+                        isSmallerThanNext = false;
+                }
+
                 nextRomanValue = currRomanValue;
         }
         return isRoman;
