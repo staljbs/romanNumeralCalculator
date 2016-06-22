@@ -9,5 +9,6 @@ Running suite RomanNumeralCalculator
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:251:P:Core:test_intToRoman:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:264:P:Core:test_integerOperation:0: Passed
 /home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:275:P:Core:test_romanAddition:0: Passed
+/home/anarang/Ford/romanNumeralCalculator/tests/checkRomanNumCalc.c:285:P:Core:test_romanSubtraction:0: Passed
 Results for all suites run:
-100%: Checks: 10, Failures: 0, Errors: 0
+100%: Checks: 11, Failures: 0, Errors: 0
