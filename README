@@ -7,6 +7,21 @@ Description:
 This is a library to perform addition/subtraction operations on Roman Numeral Strings.
 
 
+Build Instructions:
+=====================================================================================
+> Clone repository from GitHub : git clone https://github.com/staljbs/romanNumeralCalculator.git
+> Change directory to the repository directory: cd <path-to-repo>/romanNumeralCalculator
+> Run following commands on command line:
+	$ cmake .
+	$ make
+> To test the overall working of the functions, run the 'main' program in 'src' folder with arguments as illustrated below:
+	$ src/main XX + C
+	$ src/main C - X
+> To run the unit tests, use the following command on the command line:
+	$ make test
+> The results would be displayed on the screen. A log file would also be available in "log/test_overall.log"
+
+
 Inputs:
 ===============
 Input1: First Roman Numeral	(String)

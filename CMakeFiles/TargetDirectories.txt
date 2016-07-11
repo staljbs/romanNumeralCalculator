@@ -1,3 +1,0 @@
-/home/anarang/Ford/romanNumeralCalculator/tests/CMakeFiles/checkRomanNumCalc.dir
-/home/anarang/Ford/romanNumeralCalculator/src/CMakeFiles/main.dir
-/home/anarang/Ford/romanNumeralCalculator/src/CMakeFiles/romanNumeralCalculator.dir

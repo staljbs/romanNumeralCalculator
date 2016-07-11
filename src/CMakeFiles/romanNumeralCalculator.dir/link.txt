@@ -1,2 +1,0 @@
-/usr/bin/ar cr libromanNumeralCalculator.a  CMakeFiles/romanNumeralCalculator.dir/romanNumeralCalculator.c.o
-/usr/bin/ranlib libromanNumeralCalculator.a
